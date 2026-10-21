@@ -1,0 +1,50 @@
+* NGSPICE file created from counter.ext - technology: sky130A
+
+* Black-box entry subcircuit for sky130_fd_sc_hd__dfxtp_1 abstract view
+.subckt sky130_fd_sc_hd__dfxtp_1 CLK D VGND VNB VPB VPWR Q
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_2 abstract view
+.subckt sky130_fd_sc_hd__clkbuf_2 A VGND VNB VPB VPWR X
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hd__xor2_1 abstract view
+.subckt sky130_fd_sc_hd__xor2_1 A B VGND VNB VPB VPWR X
+.ends
+
+.subckt counter clk rst count[0] count[1] count[2] count[3]
+* Black-box entry subcircuit for sky130_fd_sc_hd__and2_1 abstract view
+.subckt sky130_fd_sc_hd__and2_1 A B VGND VNB VPB VPWR X
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hd__tapvpwrvgnd_1 abstract view
+.subckt sky130_fd_sc_hd__tapvpwrvgnd_1 VGND VPWR
+.ends
+
+* Black-box entry subcircuit for sky130_fd_sc_hd__inv_1 abstract view
+.subckt sky130_fd_sc_hd__inv_1 A VGND VNB VPB VPWR Y
+.ends
+
+
+* Top level circuit counter
+
+Xdff2 dff2/CLK dff2/D SUB SUB dff3/VPB dff3/VPB dff2/Q sky130_fd_sc_hd__dfxtp_1
+Xdff3 dff3/CLK dff3/D SUB SUB dff3/VPB dff3/VPB dff3/Q sky130_fd_sc_hd__dfxtp_1
+Xclkbuf_0_clk clkbuf_0_clk/A u_xor1/VGND SUB dff1/VPB dff1/VPWR clkbuf_0_clk/X sky130_fd_sc_hd__clkbuf_2
+Xu_xor1 u_xor1/A u_xor1/B u_xor1/VGND SUB dff1/VPB dff1/VPWR u_xor1/X sky130_fd_sc_hd__xor2_1
+Xu_xor2 u_xor2/A u_xor2/B SUB SUB dff3/VPB dff3/VPB u_xor2/X sky130_fd_sc_hd__xor2_1
+Xu_xor3 u_xor3/A u_xor3/B SUB SUB dff3/VPB dff3/VPB u_xor3/X sky130_fd_sc_hd__xor2_1
+Xu_and1 u_and1/A u_and1/B SUB SUB dff1/VPB dff1/VPWR u_and1/X sky130_fd_sc_hd__and2_1
+Xu_and2 u_and2/A u_and2/B u_xor1/VGND SUB dff1/VPB dff1/VPWR u_and2/X sky130_fd_sc_hd__and2_1
+XTAP_0 SUB dff3/VPB sky130_fd_sc_hd__tapvpwrvgnd_1
+XTAP_1 SUB TAP_1/VPWR sky130_fd_sc_hd__tapvpwrvgnd_1
+XTAP_2 SUB TAP_2/VPWR sky130_fd_sc_hd__tapvpwrvgnd_1
+Xclkbuf_1_0__f_clk clkbuf_1_0__f_clk/A u_xor1/VGND SUB clkbuf_1_0__f_clk/VPB clkbuf_1_0__f_clk/VPWR
++ clkbuf_1_0__f_clk/X sky130_fd_sc_hd__clkbuf_2
+Xu_inv0 u_inv0/A u_xor1/VGND SUB u_inv0/VPB u_inv0/VPWR u_inv0/Y sky130_fd_sc_hd__inv_1
+Xclkbuf_1_1__f_clk clkbuf_1_1__f_clk/A u_xor1/VGND SUB u_inv0/VPB u_inv0/VPWR clkbuf_1_1__f_clk/X
++ sky130_fd_sc_hd__clkbuf_2
+Xdff0 dff0/CLK dff0/D SUB SUB dff3/VPB dff3/VPB dff0/Q sky130_fd_sc_hd__dfxtp_1
+Xdff1 dff1/CLK dff1/D SUB SUB dff1/VPB dff1/VPWR dff1/Q sky130_fd_sc_hd__dfxtp_1
+.end
+

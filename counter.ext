@@ -1,0 +1,283 @@
+timestamp 0
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 1e+06
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use sky130_fd_sc_hd__tapvpwrvgnd_1 TAP_0 1 0 2392 0 1 1088
+use sky130_fd_sc_hd__dfxtp_1 dff0 1 0 1748 0 -1 1632
+use sky130_fd_sc_hd__dfxtp_1 dff2 1 0 1012 0 -1 1632
+use sky130_fd_sc_hd__dfxtp_1 dff3 1 0 1012 0 1 1088
+use sky130_fd_sc_hd__xor2_1 u_xor2 1 0 2070 0 1 1088
+use sky130_fd_sc_hd__xor2_1 u_xor3 1 0 1748 0 1 1088
+use sky130_fd_sc_hd__tapvpwrvgnd_1 TAP_1 1 0 2392 0 1 1632
+use sky130_fd_sc_hd__dfxtp_1 dff1 1 0 1012 0 1 1632
+use sky130_fd_sc_hd__and2_1 u_and1 1 0 1748 0 1 1632
+use sky130_fd_sc_hd__clkbuf_2 clkbuf_0_clk 1 0 1564 0 -1 2176
+use sky130_fd_sc_hd__and2_1 u_and2 1 0 1334 0 -1 2176
+use sky130_fd_sc_hd__xor2_1 u_xor1 1 0 1012 0 -1 2176
+use sky130_fd_sc_hd__tapvpwrvgnd_1 TAP_2 1 0 2392 0 1 2176
+use sky130_fd_sc_hd__clkbuf_2 clkbuf_1_0__f_clk 1 0 1012 0 1 2176
+use sky130_fd_sc_hd__clkbuf_2 clkbuf_1_1__f_clk 1 0 1288 0 1 2176
+use sky130_fd_sc_hd__inv_1 u_inv0 1 0 1472 0 1 2176
+substrate "SUB" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "dff2/D" "dff3/D" 3.1875
+cap "dff1/D" "dff2/D" 4.51899
+cap "TAP_0/VPWR" "dff2/D" 1.86127
+cap "TAP_0/VPWR" "dff3/D" 1.86127
+cap "dff2/CLK" "TAP_0/VPWR" 2.33608
+cap "TAP_0/VPWR" "TAP_0/VPWR" -67.6719
+cap "dff2/CLK" "dff3/CLK" 3.84698
+cap "TAP_0/VPWR" "dff3/CLK" 2.33608
+cap "dff2/CLK" "dff1/CLK" 4.25
+cap "dff1/VPB" "dff0/CLK" 0.0711564
+cap "u_xor2/X" "TAP_1/VPWR" 0.227862
+cap "dff0/VGND" "TAP_1/VPWR" 2.15142
+cap "dff0/VGND" "u_xor3/B" 0.376631
+cap "dff3/Q" "dff2/Q" 12.0039
+cap "dff2/Q" "dff1/VPB" 0.0064861
+cap "dff3/Q" "u_xor3/X" 15.1865
+cap "TAP_0/VPWR" "dff0/D" 0.122812
+cap "u_xor2/B" "TAP_0/VPWR" 11.7831
+cap "dff2/Q" "dff0/CLK" 52.8008
+cap "u_xor3/X" "dff1/VPB" 0.296305
+cap "u_xor3/B" "dff0/D" 3.1179
+cap "dff1/VPWR" "dff0/D" 0.108604
+cap "dff0/VGND" "dff1/VPB" 2.15142
+cap "u_xor3/B" "TAP_0/VPWR" 10.928
+cap "TAP_0/VGND" "TAP_0/VPWR" -7.39686e-15
+cap "TAP_0/VPWR" "u_and1/X" 5.94126
+cap "TAP_1/VPWR" "u_and1/X" 0.0137002
+cap "u_xor3/B" "u_and1/X" 1.58965
+cap "dff1/VPWR" "u_xor3/B" 0.0281317
+cap "TAP_0/VPWR" "TAP_0/VPWR" -77.2507
+cap "dff1/VPB" "dff0/D" 1.67572
+cap "u_and1/B" "TAP_0/VPWR" 2.16315
+cap "dff3/Q" "TAP_0/VPWR" 21.7969
+cap "dff1/Q" "u_and1/X" 9.1046
+cap "TAP_0/VGND" "TAP_0/VPWR" 9.29812e-15
+cap "dff0/VGND" "TAP_2/VPWR" 0.253719
+cap "TAP_0/VPWR" "u_and1/X" 0.288343
+cap "dff0/CLK" "dff0/D" 7.14953
+cap "u_and1/B" "u_xor3/B" 1.72024
+cap "u_xor2/X" "u_xor3/X" 14.6675
+cap "u_and1/A" "TAP_0/VPWR" 2.16315
+cap "dff3/Q" "u_xor3/B" 23.4722
+cap "dff0/VGND" "u_xor3/X" 0.406622
+cap "dff0/Q" "dff2/Q" 2.09833
+cap "u_and1/A" "u_xor3/B" 1.74554
+cap "dff1/VPB" "u_xor3/B" 0.400313
+cap "dff0/VGND" "u_xor2/X" 0.406622
+cap "dff0/CLK" "TAP_0/VPWR" 2.27453
+cap "dff1/VPB" "u_and1/X" -0.00615773
+cap "dff2/Q" "dff0/D" 5.00909
+cap "u_and1/B" "TAP_0/VPWR" 0.108295
+cap "dff1/Q" "u_and1/A" 19.125
+cap "TAP_0/VGND" "dff0/CLK" 0.110901
+cap "dff1/Q" "dff1/VPB" -0.0167807
+cap "dff1/VPWR" "dff0/CLK" 0.00335793
+cap "u_and1/A" "TAP_0/VPWR" 0.108295
+cap "dff2/Q" "TAP_0/VPWR" 23.2069
+cap "u_xor3/X" "u_xor2/B" 16.7385
+cap "u_xor3/X" "TAP_0/VPWR" 33.9467
+cap "dff0/VGND" "u_xor2/B" 0.464892
+cap "dff1/VPB" "u_and1/A" -0.0204565
+cap "u_xor2/X" "TAP_0/VPWR" 18.8084
+cap "dff2/Q" "dff1/Q" 11.9
+cap "dff0/VGND" "TAP_0/VPWR" -7.10543e-15
+cap "u_xor3/X" "u_and1/X" 1.83505
+cap "dff1/VPWR" "u_xor3/X" 0.00629868
+cap "dff0/CLK" "u_and1/A" 3.94091
+cap "dff0/Q" "TAP_1/VPWR" 1.5057
+cap "TAP_0/VPWR" "TAP_0/VPWR" -2.58434
+cap "TAP_0/VGND" "dff0/Q" 0.0050155
+cap "dff0/Q" "TAP_0/VPWR" 2.8446
+cap "TAP_2/VPWR" "dff0/VGND" 0.253719
+cap "TAP_1/VPWR" "dff0/VGND" 2.15142
+cap "TAP_1/VPWR" "dff0/Q" 0.00258725
+cap "dff0/Q" "dff2/Q" 2.13389
+cap "dff0/Q" "TAP_2/VPWR" 0.10726
+cap "TAP_2/VGND" "dff0/Q" 0.000961196
+cap "clkbuf_1_1__f_clk/VPB" "u_and2/X" 0.877141
+cap "clkbuf_1_1__f_clk/X" "clkbuf_1_0__f_clk/VPB" 2.84685
+cap "u_and2/B" "clkbuf_1_1__f_clk/X" 3.66223
+cap "clkbuf_1_1__f_clk/VPB" "clkbuf_1_0__f_clk/X" 12.4685
+cap "dff0/VGND" "u_xor1/X" 0.367052
+cap "clkbuf_0_clk/A" "clkbuf_1_1__f_clk/VPB" 1.29347
+cap "u_and2/A" "TAP_0/VPWR" 1.45593
+cap "u_xor1/B" "clkbuf_1_0__f_clk/A" 4.54579
+cap "clkbuf_1_1__f_clk/X" "clkbuf_1_1__f_clk/VPB" 8.9816
+cap "u_xor1/B" "clkbuf_1_0__f_clk/X" 4.09688
+cap "clkbuf_1_1__f_clk/A" "clkbuf_1_0__f_clk/X" 5.25938
+cap "u_and2/B" "dff1/VPB" 2.27218
+cap "dff1/D" "u_xor1/B" 1.55895
+cap "clkbuf_1_0__f_clk/VPWR" "u_xor1/X" 0.0544575
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPWR" 0.0600185
+cap "clkbuf_1_0__f_clk/VPB" "u_xor1/X" 2.30074
+cap "clkbuf_1_1__f_clk/VPWR" "u_and2/X" 0.0566388
+cap "clkbuf_0_clk/VGND" "clkbuf_1_0__f_clk/VPB" 2.15142
+cap "u_and2/B" "TAP_0/VPWR" 0.0337388
+cap "dff1/VPB" "u_xor1/B" 11.9173
+cap "dff0/VGND" "u_and2/A" 0.200071
+cap "dff1/VPB" "clkbuf_1_1__f_clk/A" 1.0458
+cap "clkbuf_0_clk/A" "clkbuf_1_1__f_clk/VPWR" 0.011438
+cap "clkbuf_1_1__f_clk/VPB" "u_xor1/X" 2.76522
+cap "clkbuf_0_clk/VGND" "clkbuf_1_1__f_clk/VPB" 4.30284
+cap "dff1/CLK" "clkbuf_1_0__f_clk/VPWR" 0.0369
+cap "dff1/VPWR" "clkbuf_1_1__f_clk/A" 0.0495647
+cap "u_and2/B" "TAP_0/VPWR" 0.678532
+cap "TAP_0/VPWR" "u_xor1/B" 0.159937
+cap "dff1/CLK" "clkbuf_1_0__f_clk/VPB" 0.525194
+cap "u_xor1/B" "TAP_0/VPWR" 3.38253
+cap "u_xor1/A" "clkbuf_1_0__f_clk/VPWR" 0.063703
+cap "clkbuf_0_clk/X" "u_and2/X" 26.4781
+cap "clkbuf_1_1__f_clk/A" "TAP_0/VPWR" 0.0368183
+cap "clkbuf_1_1__f_clk/VPWR" "u_xor1/X" 0.104614
+cap "dff1/CLK" "u_xor1/B" 0.109442
+cap "clkbuf_1_1__f_clk/VPB" "u_inv0/A" -0.0136784
+cap "TAP_2/VPWR" "u_inv0/Y" 0.0248071
+cap "clkbuf_0_clk/VGND" "clkbuf_1_1__f_clk/VPWR" -7.10543e-15
+cap "u_inv0/Y" "u_and2/X" 4.63636
+cap "u_xor1/A" "clkbuf_1_0__f_clk/VPB" 0.97461
+cap "u_and2/A" "clkbuf_1_1__f_clk/VPB" 1.21826
+cap "u_and2/B" "dff0/VGND" 0.0927002
+cap "clkbuf_0_clk/A" "u_and2/X" 21.1846
+cap "clkbuf_1_1__f_clk/X" "u_inv0/Y" 43.0665
+cap "u_and2/A" "clkbuf_1_1__f_clk/A" 2.97716
+cap "clkbuf_1_1__f_clk/X" "clkbuf_1_0__f_clk/X" 18.4017
+cap "dff1/VPB" "clkbuf_0_clk/X" 2.61202
+cap "dff0/VGND" "u_xor1/B" 0.46174
+cap "dff1/VPB" "clkbuf_1_0__f_clk/A" 0.0924974
+cap "dff0/VGND" "clkbuf_1_1__f_clk/A" 0.0156957
+cap "dff1/VPB" "u_inv0/Y" 2.24241
+cap "dff1/VPB" "u_and2/X" 22.7675
+cap "u_and2/A" "clkbuf_1_1__f_clk/VPWR" 0.0796287
+cap "dff1/VPB" "clkbuf_1_0__f_clk/X" 0.139251
+cap "clkbuf_0_clk/A" "dff1/VPB" 2.36995
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPWR" 1.09046
+cap "clkbuf_0_clk/X" "TAP_0/VPWR" 0.0334964
+cap "clkbuf_1_1__f_clk/VPB" "clkbuf_1_0__f_clk/VPWR" 0.856755
+cap "dff1/VPB" "clkbuf_1_1__f_clk/X" 1.88233
+cap "dff1/VPWR" "u_inv0/Y" 0.108129
+cap "dff1/VPB" "dff1/D" 1.93858
+cap "u_and2/B" "clkbuf_1_1__f_clk/VPB" 0.341114
+cap "u_and2/X" "u_xor1/X" 18.2411
+cap "u_xor1/X" "clkbuf_1_0__f_clk/X" 0.227679
+cap "clkbuf_1_0__f_clk/VPWR" "u_xor1/B" 0.0132459
+cap "TAP_0/VPWR" "u_and2/X" 0.0736838
+cap "clkbuf_1_1__f_clk/X" "dff1/VPWR" 0.0894847
+cap "clkbuf_0_clk/X" "TAP_0/VPWR" 0.708564
+cap "clkbuf_0_clk/A" "TAP_0/VPWR" 0.0357234
+cap "clkbuf_1_0__f_clk/VPB" "u_xor1/B" 0.200522
+cap "clkbuf_1_0__f_clk/VPB" "clkbuf_1_1__f_clk/A" 0.059423
+cap "u_inv0/Y" "TAP_0/VPWR" 0.125716
+cap "u_and2/X" "TAP_0/VPWR" 1.52621
+cap "dff1/VPB" "dff1/VPWR" -72.0098
+cap "clkbuf_0_clk/A" "TAP_0/VPWR" 0.718446
+cap "dff1/VPB" "u_xor1/X" 24.0497
+cap "dff1/VPB" "clkbuf_0_clk/VGND" -2.66454e-15
+cap "clkbuf_1_1__f_clk/VPWR" "clkbuf_1_0__f_clk/VPWR" 15.0427
+cap "clkbuf_1_1__f_clk/X" "TAP_0/VPWR" 0.0769935
+cap "u_and2/B" "clkbuf_1_1__f_clk/VPWR" 0.022296
+cap "clkbuf_1_0__f_clk/VPB" "clkbuf_1_1__f_clk/VPWR" 0.856755
+cap "u_inv0/A" "u_and2/X" 5.68581
+cap "u_and2/A" "u_and2/X" 1.53879
+cap "dff0/VGND" "clkbuf_0_clk/X" 0.116677
+cap "clkbuf_1_1__f_clk/VPWR" "clkbuf_1_1__f_clk/VPB" -2.01764
+cap "clkbuf_1_1__f_clk/X" "u_inv0/A" 10.7368
+cap "clkbuf_1_1__f_clk/X" "u_and2/A" 3.44595
+cap "TAP_0/VPWR" "u_xor1/X" 0.123311
+cap "u_xor1/A" "clkbuf_1_0__f_clk/X" 5.51718
+cap "dff0/VGND" "u_inv0/Y" 0.0298824
+cap "dff1/VPB" "dff1/CLK" 2.85962
+cap "dff0/VGND" "u_and2/X" 0.257732
+cap "clkbuf_0_clk/A" "dff0/VGND" 0.0981531
+cap "u_xor1/X" "TAP_0/VPWR" 2.33971
+cap "dff1/VPB" "u_and2/A" 4.75754
+cap "dff0/VGND" "clkbuf_1_1__f_clk/X" 0.0275286
+cap "clkbuf_0_clk/VGND" "dff1/CLK" 0.107733
+cap "u_and2/A" "u_xor1/X" 34.9808
+cap "clkbuf_1_0__f_clk/VPB" "u_inv0/Y" 0.116018
+cap "u_and2/A" "TAP_0/VPWR" 0.0705322
+cap "clkbuf_1_1__f_clk/VPB" "u_inv0/Y" 1.53009
+cap "clkbuf_0_clk/X" "dff1/Q" 7.83523
+cap "TAP_2/VGND" "clkbuf_0_clk/VGND" 3.15695
+cap "dff1/VPWR" "dff1/VPB" -5.73295
+cap "u_and2/X" "clkbuf_0_clk/X" 6.81056
+cap "dff0/VGND" "clkbuf_0_clk/X" 0.0315716
+cap "clkbuf_0_clk/X" "TAP_0/VPWR" 0.210442
+cap "u_and1/A" "dff1/Q" 28.1003
+cap "TAP_0/VPWR" "clkbuf_0_clk/X" 0.00984824
+cap "u_and1/X" "dff1/VPB" 0.34706
+cap "dff1/Q" "TAP_0/VPWR" 0.0064861
+cap "dff1/VPWR" "clkbuf_0_clk/X" -1.77636e-15
+cap "dff1/VPWR" "TAP_1/VPWR" 0.203433
+cap "clkbuf_0_clk/VGND" "dff1/Q" 0.00926336
+cap "clkbuf_0_clk/X" "dff1/VPB" 1.11244
+cap "dff1/VPWR" "TAP_1/VPWR" 4.81093
+cap "u_and1/X" "TAP_1/VPWR" 1.57553
+cap "u_and1/A" "dff1/VPB" 0.13771
+cap "dff1/Q" "dff1/VPB" 15.9488
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPWR" 1.09046
+cap "TAP_1/VPWR" "dff1/VPB" 0.203433
+cap "dff2/Q" "dff1/Q" 0.0406051
+cap "u_and1/X" "dff1/Q" 8.85667
+cap "TAP_2/VGND" "TAP_1/VPWR" 0.176707
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPB" 0.0600185
+cap "TAP_2/VGND" "TAP_1/VPWR" 7.95181
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPWR" 0.00450139
+cap "clkbuf_1_1__f_clk/VPB" "clkbuf_1_0__f_clk/VPWR" 0.0642566
+cap "clkbuf_1_1__f_clk/VPWR" "clkbuf_1_0__f_clk/VPWR" 3.00855
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPWR" 0.218092
+cap "clkbuf_1_0__f_clk/VPB" "clkbuf_1_1__f_clk/VPWR" 0.0642566
+cap "clkbuf_1_1__f_clk/VPWR" "clkbuf_1_1__f_clk/VPB" -0.151323
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPWR" 0.218092
+cap "TAP_2/VPWR" "clkbuf_1_1__f_clk/VPB" 0.00450139
+merge "u_inv0/VPWR" "clkbuf_1_1__f_clk/VPWR" -54.761 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -96 0 0 0 0 0 0 0 0 0 0
+merge "u_inv0/VNB" "clkbuf_1_1__f_clk/VNB" -1238.06 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -48576 -2696 0 0 0 0 0 0 0 0 0 0
+merge "clkbuf_1_1__f_clk/VNB" "clkbuf_1_0__f_clk/VNB"
+merge "clkbuf_1_0__f_clk/VNB" "TAP_2/VGND"
+merge "TAP_2/VGND" "u_xor1/VNB"
+merge "u_xor1/VNB" "u_and2/VNB"
+merge "u_and2/VNB" "clkbuf_0_clk/VNB"
+merge "clkbuf_0_clk/VNB" "u_and1/VNB"
+merge "u_and1/VNB" "u_and1/VGND"
+merge "u_and1/VGND" "dff1/VNB"
+merge "dff1/VNB" "dff1/VGND"
+merge "dff1/VGND" "TAP_1/VGND"
+merge "TAP_1/VGND" "dff2/VGND"
+merge "dff2/VGND" "dff0/VGND"
+merge "dff0/VGND" "u_xor3/VNB"
+merge "u_xor3/VNB" "u_xor3/VGND"
+merge "u_xor3/VGND" "dff3/VGND"
+merge "dff3/VGND" "u_xor2/VNB"
+merge "u_xor2/VNB" "u_xor2/VGND"
+merge "u_xor2/VGND" "dff3/VNB"
+merge "dff3/VNB" "dff2/VNB"
+merge "dff2/VNB" "dff0/VNB"
+merge "dff0/VNB" "TAP_0/VGND"
+merge "TAP_0/VGND" "SUB"
+merge "u_xor1/VPWR" "u_and2/VPWR" -771.947 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -35328 -1856 0 0 0 0 0 0 0 0 0 0
+merge "u_and2/VPWR" "clkbuf_0_clk/VPWR"
+merge "clkbuf_0_clk/VPWR" "u_and1/VPWR"
+merge "u_and1/VPWR" "dff1/VPWR"
+merge "u_xor3/VPWR" "u_xor3/VPB" -2340.17 0 0 0 0 -79952 -4588 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -68448 -3332 0 0 0 0 0 0 0 0 0 0
+merge "u_xor3/VPB" "u_xor2/VPWR"
+merge "u_xor2/VPWR" "u_xor2/VPB"
+merge "u_xor2/VPB" "dff3/VPWR"
+merge "dff3/VPWR" "dff3/VPB"
+merge "dff3/VPB" "dff2/VPWR"
+merge "dff2/VPWR" "dff2/VPB"
+merge "dff2/VPB" "dff0/VPWR"
+merge "dff0/VPWR" "dff0/VPB"
+merge "dff0/VPB" "TAP_0/VPWR"
+merge "u_inv0/VPB" "clkbuf_1_1__f_clk/VPB" -72.96 0 0 0 0 -6080 -396 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "u_xor1/VPB" "u_and2/VPB" -571.824 0 0 0 0 -47652 -2812 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "u_and2/VPB" "clkbuf_0_clk/VPB"
+merge "clkbuf_0_clk/VPB" "u_and1/VPB"
+merge "u_and1/VPB" "dff1/VPB"
+merge "u_inv0/VGND" "clkbuf_1_1__f_clk/VGND" -678 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -24288 -1492 0 0 0 0 0 0 0 0 0 0
+merge "clkbuf_1_1__f_clk/VGND" "clkbuf_1_0__f_clk/VGND"
+merge "clkbuf_1_0__f_clk/VGND" "u_xor1/VGND"
+merge "u_xor1/VGND" "u_and2/VGND"
+merge "u_and2/VGND" "clkbuf_0_clk/VGND"

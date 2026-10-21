@@ -1,0 +1,55 @@
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN counter ;
+UNITS DISTANCE MICRONS 1000 ;
+DIEAREA ( 0 0 ) ( 35660 35660 ) ;
+ROW ROW_0 unithd 10120 10880 N DO 33 BY 1 STEP 460 0 ;
+ROW ROW_1 unithd 10120 13600 FS DO 33 BY 1 STEP 460 0 ;
+ROW ROW_2 unithd 10120 16320 N DO 33 BY 1 STEP 460 0 ;
+ROW ROW_3 unithd 10120 19040 FS DO 33 BY 1 STEP 460 0 ;
+ROW ROW_4 unithd 10120 21760 N DO 33 BY 1 STEP 460 0 ;
+COMPONENTS 16 ;
+    - TAP_0 sky130_fd_sc_hd__tapvpwrvgnd_1 + SOURCE DIST + FIXED ( 23920 10880 ) N ;
+    - TAP_1 sky130_fd_sc_hd__tapvpwrvgnd_1 + SOURCE DIST + FIXED ( 23920 16320 ) N ;
+    - TAP_2 sky130_fd_sc_hd__tapvpwrvgnd_1 + SOURCE DIST + FIXED ( 23920 21760 ) N ;
+    - clkbuf_0_clk sky130_fd_sc_hd__clkbuf_2 + SOURCE TIMING + PLACED ( 15640 19040 ) FS ;
+    - clkbuf_1_0__f_clk sky130_fd_sc_hd__clkbuf_2 + SOURCE TIMING + PLACED ( 10120 21760 ) N ;
+    - clkbuf_1_1__f_clk sky130_fd_sc_hd__clkbuf_2 + SOURCE TIMING + PLACED ( 12880 21760 ) N ;
+    - dff0 sky130_fd_sc_hd__dfxtp_1 + PLACED ( 17480 13600 ) FS ;
+    - dff1 sky130_fd_sc_hd__dfxtp_1 + PLACED ( 10120 16320 ) N ;
+    - dff2 sky130_fd_sc_hd__dfxtp_1 + PLACED ( 10120 13600 ) FS ;
+    - dff3 sky130_fd_sc_hd__dfxtp_1 + PLACED ( 10120 10880 ) N ;
+    - u_and1 sky130_fd_sc_hd__and2_1 + PLACED ( 17480 16320 ) N ;
+    - u_and2 sky130_fd_sc_hd__and2_1 + PLACED ( 13340 19040 ) FS ;
+    - u_inv0 sky130_fd_sc_hd__inv_1 + PLACED ( 14720 21760 ) N ;
+    - u_xor1 sky130_fd_sc_hd__xor2_1 + PLACED ( 10120 19040 ) FS ;
+    - u_xor2 sky130_fd_sc_hd__xor2_1 + PLACED ( 20700 10880 ) N ;
+    - u_xor3 sky130_fd_sc_hd__xor2_1 + PLACED ( 17480 10880 ) N ;
+END COMPONENTS
+PINS 6 ;
+    - clk + NET clk + DIRECTION INPUT + USE SIGNAL ;
+    - count[0] + NET count[0] + DIRECTION OUTPUT + USE SIGNAL ;
+    - count[1] + NET count[1] + DIRECTION OUTPUT + USE SIGNAL ;
+    - count[2] + NET count[2] + DIRECTION OUTPUT + USE SIGNAL ;
+    - count[3] + NET count[3] + DIRECTION OUTPUT + USE SIGNAL ;
+    - rst + NET rst + DIRECTION INPUT + USE SIGNAL ;
+END PINS
+NETS 15 ;
+    - and01 ( u_xor2 B ) ( u_and2 A ) ( u_and1 X ) + USE SIGNAL ;
+    - and012 ( u_xor3 B ) ( u_and2 X ) + USE SIGNAL ;
+    - clk ( PIN clk ) ( clkbuf_0_clk A ) + USE CLOCK ;
+    - clknet_0_clk ( clkbuf_1_1__f_clk A ) ( clkbuf_1_0__f_clk A ) ( clkbuf_0_clk X ) + USE CLOCK ;
+    - clknet_1_0__leaf_clk ( dff2 CLK ) ( dff3 CLK ) ( clkbuf_1_0__f_clk X ) + USE CLOCK ;
+    - clknet_1_1__leaf_clk ( dff0 CLK ) ( dff1 CLK ) ( clkbuf_1_1__f_clk X ) + USE CLOCK ;
+    - count[0] ( PIN count[0] ) ( u_xor1 A ) ( u_inv0 A ) ( u_and1 A ) ( dff0 Q ) + USE SIGNAL ;
+    - count[1] ( PIN count[1] ) ( u_xor1 B ) ( u_and1 B ) ( dff1 Q ) + USE SIGNAL ;
+    - count[2] ( PIN count[2] ) ( u_xor2 A ) ( u_and2 B ) ( dff2 Q ) + USE SIGNAL ;
+    - count[3] ( PIN count[3] ) ( u_xor3 A ) ( dff3 Q ) + USE SIGNAL ;
+    - net0 ( u_inv0 Y ) ( dff0 D ) + USE SIGNAL ;
+    - net1 ( u_xor1 X ) ( dff1 D ) + USE SIGNAL ;
+    - net2 ( u_xor2 X ) ( dff2 D ) + USE SIGNAL ;
+    - net3 ( u_xor3 X ) ( dff3 D ) + USE SIGNAL ;
+    - rst ( PIN rst ) + USE SIGNAL ;
+END NETS
+END DESIGN
